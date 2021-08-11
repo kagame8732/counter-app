@@ -4,22 +4,20 @@ class Counter extends Component {
     state = {  
         count: 0
     };
-    style = {
-       fontSize: 30,
-       fontWeight: 'bold',
-
-
-
+     handleIncrement =() => {
+         this.setState({count:this.state.count + 1})
     }
-    render() { 
-        return <React.Fragment>
-                <span style={this.style} className="btn btn-primary m-4">{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
-                </React.Fragment>;
+    render() {
+        return (
+        
+        <React.Fragment>
+            <span className="btn btn-info m-2">{this.formatCount()}</span>
+            <button onClick={this.handleIncrement} className="btn btn-secondary sm">Increment</button>  
+        </React.Fragment>
+        )
     }
-    formatCount (){
-        const {count } = this.state;
-        return count === 0 ? "Zero": count;
+    formatCount(){
+        return (this.state.count === 0 ? "zero" : this.state.count )
     }
 }
  
