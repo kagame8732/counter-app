@@ -4,10 +4,10 @@ import Counter from "./counter";
 class Counters extends Component {
   state = {
     counters: [
-      { id: 1, value: 4 },
+      { id: 1, value: 0 },
       { id: 2, value: 0 },
       { id: 3, value: 0 },
-      { id: 4, value: 6 },
+      { id: 4, value: 0 },
     ],
   };
 
@@ -37,6 +37,9 @@ class Counters extends Component {
   render() {
     return (
       <div>
+        <h1>
+          <strong>Counter App</strong>
+        </h1>
         <button onClick={this.handleReset} className="btn btn-primary sm m-2">
           Reset
         </button>
